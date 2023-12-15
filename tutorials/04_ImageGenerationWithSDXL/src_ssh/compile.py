@@ -1,8 +1,10 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
+# Temp measure to avoid python3-distro error on trn
 import subprocess
-subprocess.check_call(['apt-mark', 'hold', 'ssh-import-id'])  # Temp measure to avoid python3-distro error on trn
+subprocess.check_call(['apt-get', 'update'])
+subprocess.check_call(['apt-mark', 'hold', 'ssh-import-id'])
 
 # See https://github.com/aws-samples/sagemaker-ssh-helper#inference
 import os
