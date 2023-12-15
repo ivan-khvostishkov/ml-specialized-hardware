@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="root@sagemaker-d-ml-m5-larg-sagemaker-s-583bba28957cae5a8f67fad845e3.default-1693563390218.d-yostwvp5tige.studio.sagemaker:22 agent" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="root@sagemaker-d-ml-m5-larg-sagemaker-s-583bba28957cae5a8f67fad845e3.default-1693563390218.d-yostwvp5tige.studio.sagemaker:22 agent">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/ml-specialized-hardware" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@sd-ml-inf2-2023-11-29-17-55-19-329.inference.sagemaker:22 agent">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/pycharm_project_350" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
