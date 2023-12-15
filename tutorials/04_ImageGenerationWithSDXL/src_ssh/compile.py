@@ -3,6 +3,7 @@
 
 # Temp measure to avoid python3-distro error on trn
 import subprocess
+subprocess.check_call(['chmod', '1777', '/tmp'])
 subprocess.check_call(['apt-get', 'update'])
 subprocess.check_call(['apt-mark', 'hold', 'ssh-import-id'])
 
