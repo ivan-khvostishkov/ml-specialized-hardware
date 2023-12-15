@@ -1,6 +1,14 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
+# See https://github.com/aws-samples/sagemaker-ssh-helper#inference
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
+import sagemaker_ssh_helper
+sagemaker_ssh_helper.setup_and_start_ssh()
+
+
 import os
 os.environ['NEURON_RT_NUM_CORES'] = '2'
 import io
