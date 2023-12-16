@@ -1,18 +1,14 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
-# Temp measure to avoid python3-distro error on trn
+# See https://github.com/aws-samples/sagemaker-ssh-helper#inference
+#import sagemaker_ssh_helper
+#sagemaker_ssh_helper.setup_and_start_ssh()
+
 import subprocess
 subprocess.check_call(['chmod', '1777', '/tmp'])
 subprocess.check_call(['apt-get', 'update'])
-subprocess.check_call(['apt-mark', 'hold', 'ssh-import-id'])
-
-# See https://github.com/aws-samples/sagemaker-ssh-helper#inference
-import os
-import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
-import sagemaker_ssh_helper
-sagemaker_ssh_helper.setup_and_start_ssh()
+subprocess.check_call(['apt-get', 'install', '-y', 'ssh-import-id'])
 
 
 import os
