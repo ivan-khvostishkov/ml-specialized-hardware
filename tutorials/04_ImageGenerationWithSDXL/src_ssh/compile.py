@@ -1,15 +1,16 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
-# See https://github.com/aws-samples/sagemaker-ssh-helper#inference
-#import sagemaker_ssh_helper
-#sagemaker_ssh_helper.setup_and_start_ssh()
-
+# Workaround to run SSH Helper on trn1 (should be fixed in 2.2.0)
 import subprocess
 subprocess.check_call(['chmod', '1777', '/tmp'])
 subprocess.check_call(['apt-get', 'update'])
-subprocess.check_call(['apt-get', 'install', '-y', 'ssh-import-id'])
+subprocess.check_call(['apt-mark', 'hold', 'python3-distro'])
+subprocess.check_call(['apt-mark', 'hold', 'ssh-import-id'])
 
+# See https://github.com/aws-samples/sagemaker-ssh-helper#inference
+import sagemaker_ssh_helper
+sagemaker_ssh_helper.setup_and_start_ssh()
 
 import os
 os.environ['NEURON_RT_NUM_CORES'] = '2'
