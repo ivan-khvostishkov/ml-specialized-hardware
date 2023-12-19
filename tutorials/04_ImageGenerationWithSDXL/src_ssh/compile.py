@@ -7,6 +7,7 @@ subprocess.check_call(['chmod', '1777', '/tmp'])
 subprocess.check_call(['apt-get', 'update'])
 subprocess.check_call(['apt-mark', 'hold', 'python3-distro'])
 subprocess.check_call(['apt-mark', 'hold', 'ssh-import-id'])
+subprocess.check_call(['apt-get', 'install', '-y', 'ssh', 'net-tools', 'procps', 'less', 'jq', 'vim', 'rsync', 'locales', 'rsyslog'])
 
 # See https://github.com/aws-samples/sagemaker-ssh-helper#inference
 import sagemaker_ssh_helper
