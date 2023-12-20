@@ -45,11 +45,11 @@ def input_fn(request_body, request_content_type, context=None):
         num_inference_steps = req.get('num_inference_steps', 50)
         guidance_scale = req.get('guidance_scale', 7.5)
         if prompt is None or type(prompt) != str or len(prompt) < 5:
-            raise("Invalid prompt. It needs to be a string > 5")
+            raise "Invalid prompt. It needs to be a string > 5"
         if type(num_inference_steps) != int:
-            raise("Invalid num_inference_steps. Expected int. default = 50")
+            raise "Invalid num_inference_steps. Expected int. default = 50"
         if type(guidance_scale) != float:
-            raise("Invalid guidance_scale. Expected float. default = 7.5")
+            raise "Invalid guidance_scale. Expected float. default = 7.5"
         return prompt, num_inference_steps, guidance_scale
     else:
         raise Exception(f"Unsupported mime type: {request_content_type}. Supported: application/json")
